@@ -1,0 +1,6 @@
+.form-group {
+  margin-bottom: 25px;
+}
+.title_content {
+  border-bottom: 1px solid var(--text-color);
+}

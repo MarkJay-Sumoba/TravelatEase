@@ -1,0 +1,12 @@
+.sidebar {
+  width: 250px;
+  transition: all 0.3s;
+  height: 100vh;
+}
+.profile_pic img {
+  border-radius: 50%;
+}
+.nav_bottom {
+  position: relative;
+  top: 300px;
+}
