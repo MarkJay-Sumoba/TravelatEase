@@ -2,7 +2,7 @@
 
 Travel@Ease is a Tour and Travel Web application built with React on the front-end and Express on the server-side.
 
-__Link: https://travel-at-ease.netlify.app/home
+**Link: https://travel-at-ease.netlify.app/home
 
 ## ![Hero](./images/hero.jpeg 'Hero')
 
@@ -23,10 +23,10 @@ __Link: https://travel-at-ease.netlify.app/home
 ## Technologies Used
 
 Front-End:
-## (./images/front.png)
+## ![Front](./images/front.png 'Front')
 
 Back-End:
-## (./images/back.png)
+## ![Back](./images/back.png 'Back')
 
 ## Installations
 1. Clone the repository
