@@ -45,4 +45,7 @@ Back-End:
 1. Deploy the server to Heroku and Netlify
 2, Update the client to fetch data from the deployed server endpoint.
 
+## Contributor
+* Sangkyu Kim(@SangKyu-Kim01)
+* Michael Pinsonneault(@Mikepin23)
 
