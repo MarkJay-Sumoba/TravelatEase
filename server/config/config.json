@@ -18,6 +18,9 @@
     "password": "admin123",
     "database": "travelease",
     "host": "travelateasedb.c1qaqoeykds9.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "ssl": {
+      "ca": "config/amazon-rds-ca-cert.pem"
+    }
   }
 }

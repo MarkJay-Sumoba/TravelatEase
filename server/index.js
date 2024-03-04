@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: "https://travelatease01.netlify.app",
+    origin: "https://travelatease01.netlify.app/",
     methods: "GET, PUT, PATCH, POST, DELETE",
     allowedHeaders: "Content-Type",
   })
