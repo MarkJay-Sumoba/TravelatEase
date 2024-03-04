@@ -30,7 +30,7 @@ export default function Register() {
     console.log("Form submitted with data:", data);
     try {
       await axios.post(
-        "https://travelatease-5e3f78deebae.herokuapp.com//api/register",
+        "https://travelatease-5e3f78deebae.herokuapp.com/api/register",
         data
       );
 

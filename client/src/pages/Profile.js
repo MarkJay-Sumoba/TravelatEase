@@ -64,14 +64,14 @@ export default function Profile() {
   const handleProfileUpdate = async (data) => {
     try {
       const response = await axios.patch(
-        `https://travelatease-5e3f78deebae.herokuapp.com//api/userUpdate/${userID}`,
+        `https://travelatease-5e3f78deebae.herokuapp.com/api/userUpdate/${userID}`,
         data
       );
       console.log("User data updated: ", response.data);
 
       // Fetch updated user data after the update
       const updatedUserData = await axios.get(
-        `https://travelatease-5e3f78deebae.herokuapp.com//api/user/${userID}`
+        `https://travelatease-5e3f78deebae.herokuapp.com/api/user/${userID}`
       );
 
       // Update the user state with the new data
@@ -99,7 +99,7 @@ export default function Profile() {
       };
 
       const response = await axios.patch(
-        "https://travelatease-5e3f78deebae.herokuapp.com//api/change-password",
+        "https://travelatease-5e3f78deebae.herokuapp.com/api/change-password",
         dataToChangePassword
       );
 
@@ -146,7 +146,7 @@ export default function Profile() {
   const handleAccountDeletion = async () => {
     try {
       const response = await axios.delete(
-        `https://travelatease-5e3f78deebae.herokuapp.com//api/delete-user/${userID}`
+        `https://travelatease-5e3f78deebae.herokuapp.com/api/delete-user/${userID}`
       );
 
       console.log("Account deleted successfully: ", response);
@@ -163,7 +163,7 @@ export default function Profile() {
     const fetchBookingData = async () => {
       try {
         const bookingsResponse = await axios.get(
-          `https://travelatease-5e3f78deebae.herokuapp.com//api/get-bookings/${userID}`
+          `https://travelatease-5e3f78deebae.herokuapp.com/api/get-bookings/${userID}`
         );
         const bookingsData = bookingsResponse.data;
 
@@ -171,7 +171,7 @@ export default function Profile() {
           bookingsData.map(async (booking) => {
             try {
               const tourResponse = await axios.get(
-                `https://travelatease-5e3f78deebae.herokuapp.com//api/tours/${booking.tourID}`
+                `https://travelatease-5e3f78deebae.herokuapp.com/api/tours/${booking.tourID}`
               );
               return { ...booking, tour: tourResponse.data };
             } catch (error) {

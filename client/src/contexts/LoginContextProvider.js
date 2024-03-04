@@ -39,7 +39,7 @@ const LoginContextProvider = ({ children }) => {
   const getLoggedInUser = async () => {
     try {
       const userDataResponse = await axios.get(
-        "https://travelatease-5e3f78deebae.herokuapp.com//api/logged-in-user",
+        "https://travelatease-5e3f78deebae.herokuapp.com/api/logged-in-user",
         { withCredentials: true }
       );
 
@@ -65,7 +65,7 @@ const LoginContextProvider = ({ children }) => {
   const login = async (data) => {
     try {
       const response = await axios.post(
-        "https://travelatease-5e3f78deebae.herokuapp.com//api/login",
+        "https://travelatease-5e3f78deebae.herokuapp.com/api/login",
         data,
         { withCredentials: true }
       );
@@ -81,7 +81,7 @@ const LoginContextProvider = ({ children }) => {
       console.log("Login Success!");
 
       const userDataResponse = await axios.get(
-        "https://travelatease-5e3f78deebae.herokuapp.com//api/logged-in-user",
+        "https://travelatease-5e3f78deebae.herokuapp.com/api/logged-in-user",
         { withCredentials: true }
       );
 
@@ -121,7 +121,7 @@ const LoginContextProvider = ({ children }) => {
   const performLogout = async () => {
     try {
       const response = await axios.post(
-        "https://travelatease-5e3f78deebae.herokuapp.com//api/logout",
+        "https://travelatease-5e3f78deebae.herokuapp.com/api/logout",
         null,
         {
           withCredentials: true,

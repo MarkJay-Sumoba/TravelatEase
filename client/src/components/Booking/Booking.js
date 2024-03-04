@@ -39,7 +39,7 @@ export default function Booking({ tour, avgRating }) {
     try {
       // Create checkout session
       const checkoutResponse = await axios.post(
-        "https://travelatease-5e3f78deebae.herokuapp.com//api/make-payment",
+        "https://travelatease-5e3f78deebae.herokuapp.com/api/make-payment",
         {
           items: [
             {
@@ -56,7 +56,7 @@ export default function Booking({ tour, avgRating }) {
       window.location = url;
 
       const response = await axios.post(
-        "https://travelatease-5e3f78deebae.herokuapp.com//api/make-booking",
+        "https://travelatease-5e3f78deebae.herokuapp.com/api/make-booking",
         {
           tourID: tour.tourID,
           providedFullName: credentials.fullName,

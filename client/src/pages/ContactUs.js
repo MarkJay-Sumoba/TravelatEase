@@ -16,7 +16,7 @@ export default function ContactUs() {
   const handleSubmit = async (values, { resetForm }) => {
     try {
       const response = await axios.post(
-        "https://travelatease-5e3f78deebae.herokuapp.com//api/contactus",
+        "https://travelatease-5e3f78deebae.herokuapp.com/api/contactus",
         values
       );
 

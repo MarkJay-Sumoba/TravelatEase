@@ -25,7 +25,7 @@ const Admin = () => {
     const fetchTours = async () => {
       try {
         const response = await axios.get(
-          "https://travelatease-5e3f78deebae.herokuapp.com//api/tours"
+          "https://travelatease-5e3f78deebae.herokuapp.com/api/tours"
         );
         console.log("Response:", response);
 
@@ -50,7 +50,7 @@ const Admin = () => {
     try {
       // Send a request to delete the tour
       await axios.delete(
-        `https://travelatease-5e3f78deebae.herokuapp.com//api/delete-tour/${id}`
+        `https://travelatease-5e3f78deebae.herokuapp.com/api/delete-tour/${id}`
       );
       console.log("Tour deleted successfully!");
 
