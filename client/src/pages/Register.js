@@ -29,7 +29,10 @@ export default function Register() {
   const onSubmit = async (data, { setSubmitting }) => {
     console.log("Form submitted with data:", data);
     try {
-      await axios.post("https://localhost:3001/api/register", data);
+      await axios.post(
+        "https://travelatease-5e3f78deebae.herokuapp.com//api/register",
+        data
+      );
 
       console.log("Registration successful!");
       setShowAlert(true);

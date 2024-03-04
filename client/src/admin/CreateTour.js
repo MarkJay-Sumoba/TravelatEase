@@ -38,9 +38,13 @@ function CreateTour() {
       formData.append("tourDate", data.tourDate);
       formData.append("description", data.description);
 
-      await axios.post("https://localhost:3001/api/create-tour", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      await axios.post(
+        "https://travelatease-5e3f78deebae.herokuapp.com//api/create-tour",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
 
       console.log("Tour Created Successful!");
       resetForm();

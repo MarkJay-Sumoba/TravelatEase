@@ -31,7 +31,7 @@ export default function UpdateTour() {
 
   useEffect(() => {
     axios
-      .get(`https://localhost:3001/api/tours/${id}`)
+      .get(`https://travelatease-5e3f78deebae.herokuapp.com//api/tours/${id}`)
       .then((response) => {
         const tour = response.data;
         setTourData({
@@ -71,7 +71,7 @@ export default function UpdateTour() {
       console.log("before sending formData : ", formData);
 
       const response = await axios.put(
-        `https://localhost:3001/api/update-tour/${id}`,
+        `https://travelatease-5e3f78deebae.herokuapp.com//api/update-tour/${id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

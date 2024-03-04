@@ -1,6 +1,6 @@
 const { Users, Bookings, Tours } = require("../models");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const saltRounds = 10;
 
 module.exports = {

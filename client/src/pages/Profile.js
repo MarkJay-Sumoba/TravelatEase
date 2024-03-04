@@ -64,14 +64,14 @@ export default function Profile() {
   const handleProfileUpdate = async (data) => {
     try {
       const response = await axios.patch(
-        `https://localhost:3001/api/userUpdate/${userID}`,
+        `https://travelatease-5e3f78deebae.herokuapp.com//api/userUpdate/${userID}`,
         data
       );
       console.log("User data updated: ", response.data);
 
       // Fetch updated user data after the update
       const updatedUserData = await axios.get(
-        `https://localhost:3001/api/user/${userID}`
+        `https://travelatease-5e3f78deebae.herokuapp.com//api/user/${userID}`
       );
 
       // Update the user state with the new data
@@ -99,7 +99,7 @@ export default function Profile() {
       };
 
       const response = await axios.patch(
-        "https://localhost:3001/api/change-password",
+        "https://travelatease-5e3f78deebae.herokuapp.com//api/change-password",
         dataToChangePassword
       );
 
@@ -146,7 +146,7 @@ export default function Profile() {
   const handleAccountDeletion = async () => {
     try {
       const response = await axios.delete(
-        `https://localhost:3001/api/delete-user/${userID}`
+        `https://travelatease-5e3f78deebae.herokuapp.com//api/delete-user/${userID}`
       );
 
       console.log("Account deleted successfully: ", response);
@@ -163,7 +163,7 @@ export default function Profile() {
     const fetchBookingData = async () => {
       try {
         const bookingsResponse = await axios.get(
-          `https://localhost:3001/api/get-bookings/${userID}`
+          `https://travelatease-5e3f78deebae.herokuapp.com//api/get-bookings/${userID}`
         );
         const bookingsData = bookingsResponse.data;
 
@@ -171,7 +171,7 @@ export default function Profile() {
           bookingsData.map(async (booking) => {
             try {
               const tourResponse = await axios.get(
-                `https://localhost:3001/api/tours/${booking.tourID}`
+                `https://travelatease-5e3f78deebae.herokuapp.com//api/tours/${booking.tourID}`
               );
               return { ...booking, tour: tourResponse.data };
             } catch (error) {
@@ -596,57 +596,62 @@ export default function Profile() {
                   </div>
                 </Tab.Pane>
 
-      {/* Display Bookings */}
-<Tab.Pane eventKey="my_bookings">
-  <div className="container mt-4">
-    <h3 className="mb-4">My Bookings</h3>
-    {/* Placeholder for displaying bookings */}
-    {bookings.length > 0 ? (
-      <div className="card-deck">
-        {bookings.map((booking) => (
-          <div key={booking.bookingID} className="card mb-4">
-            <div className="row no-gutters">
-              <div className="col-md-4 d-flex align-items-center justify-content-center">
-                <div className="image-container">
-                  <img
-                    src={booking.tour && booking.tour.imageUrl}
-                    className="card-img img-fluid"
-                    alt="Tour Image"
-                  />
-                </div>
-              </div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">
-                    {booking.tour && booking.tour.title}
-                  </h5>
-                  <p className="card-text">
-                    <strong>Booking ID:</strong> {booking.bookingID}
-                    <br />
-                    <strong>Date:</strong> {booking.tour && booking.tour.tourDate}
-                    <br />
-                    <strong>Full Name:</strong> {booking.providedFullName}
-                    <br />
-                    <strong>Email:</strong> {booking.providedEmail}
-                    <br />
-                    <strong>Phone:</strong> {booking.providedPhone}
-                    <br />
-                    <strong>Guests:</strong> {booking.guests}
-                    <br />
-                    <strong>Total Price:</strong> ${booking.totalPrice}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    ) : (
-      <p>No bookings found.</p>
-    )}
-  </div>
-</Tab.Pane>
-
+                {/* Display Bookings */}
+                <Tab.Pane eventKey="my_bookings">
+                  <div className="container mt-4">
+                    <h3 className="mb-4">My Bookings</h3>
+                    {/* Placeholder for displaying bookings */}
+                    {bookings.length > 0 ? (
+                      <div className="card-deck">
+                        {bookings.map((booking) => (
+                          <div key={booking.bookingID} className="card mb-4">
+                            <div className="row no-gutters">
+                              <div className="col-md-4 d-flex align-items-center justify-content-center">
+                                <div className="image-container">
+                                  <img
+                                    src={booking.tour && booking.tour.imageUrl}
+                                    className="card-img img-fluid"
+                                    alt="Tour Image"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-md-8">
+                                <div className="card-body">
+                                  <h5 className="card-title">
+                                    {booking.tour && booking.tour.title}
+                                  </h5>
+                                  <p className="card-text">
+                                    <strong>Booking ID:</strong>{" "}
+                                    {booking.bookingID}
+                                    <br />
+                                    <strong>Date:</strong>{" "}
+                                    {booking.tour && booking.tour.tourDate}
+                                    <br />
+                                    <strong>Full Name:</strong>{" "}
+                                    {booking.providedFullName}
+                                    <br />
+                                    <strong>Email:</strong>{" "}
+                                    {booking.providedEmail}
+                                    <br />
+                                    <strong>Phone:</strong>{" "}
+                                    {booking.providedPhone}
+                                    <br />
+                                    <strong>Guests:</strong> {booking.guests}
+                                    <br />
+                                    <strong>Total Price:</strong> $
+                                    {booking.totalPrice}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p>No bookings found.</p>
+                    )}
+                  </div>
+                </Tab.Pane>
               </Tab.Content>
             </Col>
           </Row>

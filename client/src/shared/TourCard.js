@@ -13,13 +13,13 @@ export default function TourCard({ tour }) {
     const fetchTour = async () => {
       try {
         const response = await axios.get(
-          `https://localhost:3001/api/tours/${tour.tourID}`
+          `https://travelatease-5e3f78deebae.herokuapp.com//api/tours/${tour.tourID}`
         );
         setTourReviews(response.data.tourReviews);
       } catch (error) {}
     };
     fetchTour();
-  }, []);
+  }, [tour]);
 
   const { totalRating, avgRating } = calculateAvgRating(tourReviews);
   return (

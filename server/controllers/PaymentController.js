@@ -22,8 +22,8 @@ module.exports = {
           quantity: item.quantity,
         })),
         mode: "payment",
-        success_url: "https://localhost:3000/success", 
-        cancel_url: "https://localhost:3000/canceled", 
+        success_url: "https://travelatease01.netlify.app/success",
+        cancel_url: "https://travelatease01.netlify.app/canceled",
       });
 
       res.json({ url: session.url });

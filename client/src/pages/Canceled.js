@@ -11,7 +11,7 @@ export default function Canceled() {
     const deleteLatestBooking = async () => {
       try {
         await axios.delete(
-          `https://localhost:3001/api/delete-booking/${userID}`
+          `https://travelatease-5e3f78deebae.herokuapp.com//api/delete-booking/${userID}`
         );
         console.log("Latest booking deleted successfully");
       } catch (error) {
@@ -25,7 +25,7 @@ export default function Canceled() {
     setTimeout(() => {
       navigate("/");
     }, 3000);
-  }, [userID]);
+  }, [userID, navigate]);
 
   return (
     <div>

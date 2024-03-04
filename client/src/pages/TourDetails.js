@@ -16,7 +16,7 @@ export default function TourDetails() {
     const fetchTour = async () => {
       try {
         const response = await axios.get(
-          `https://localhost:3001/api/tours/${id}`
+          `https://travelatease-5e3f78deebae.herokuapp.com//api/tours/${id}`
         );
         setTour(response.data);
       } catch (error) {

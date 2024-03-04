@@ -3,7 +3,7 @@ const { Users } = require("../models/");
 const { createTokens } = require("../Middleware/JWT");
 const jwt = require("jsonwebtoken");
 
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 const dotenv = require("dotenv");
 dotenv.config();
@@ -37,7 +37,8 @@ module.exports = {
       res.cookie("access-token", accessToken, {
         maxAge: 60 * 60 * 24,
         secure: true,
-        sameSite: "lax",
+        // sameSite: "lax",
+        sameSite: "None",
       });
 
       res.status(200).json({

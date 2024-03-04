@@ -8,7 +8,7 @@ export default function FeaturedTourList() {
 
   useEffect(() => {
     axios
-      .get("https://localhost:3001/api/tours")
+      .get("https://travelatease-5e3f78deebae.herokuapp.com//api/tours")
       .then((response) => {
         setTours(response.data);
         console.log("Featured Tours List with url: ", response);

@@ -1,26 +1,26 @@
-import React, { useContext, useState, useEffect } from "react";
+import { ErrorMessage, Field, Formik } from "formik";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   Alert,
+  Button,
+  Col,
+  Container,
   Form,
   FormGroup,
   Label,
-  Container,
   Row,
-  Col,
-  Button,
 } from "reactstrap";
 import * as Yup from "yup";
-import { Formik, Field, ErrorMessage } from "formik";
+import loginImg from "../assets/images/login.jpg";
 import { LoginContext } from "../contexts/LoginContextProvider";
 import "../styles/Login.css";
-import loginImg from "../assets/images/login.jpg";
 
 export default function Login() {
   const { isLogin, isAdmin, errorMsg, login } = useContext(LoginContext);
 
   let navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
   const [showErrorAlert, setShowErrorAlert] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");

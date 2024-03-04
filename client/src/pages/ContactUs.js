@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import axios from "axios";
 import * as Yup from "yup";
@@ -16,7 +16,7 @@ export default function ContactUs() {
   const handleSubmit = async (values, { resetForm }) => {
     try {
       const response = await axios.post(
-        "https://localhost:3001/api/contactus",
+        "https://travelatease-5e3f78deebae.herokuapp.com//api/contactus",
         values
       );
 

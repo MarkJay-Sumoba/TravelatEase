@@ -1,0 +1,122 @@
+import React from "react";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Container, Row } from "reactstrap";
+import { Link } from "react-router-dom";
+
+export default function UpdateTour() {
+  return (
+    <>
+      <Container>
+        <Row>
+          <div className="nav_wrap d-flex align-items-center justify-content-between">
+            <div>
+              <img
+                src={Logo}
+                width="150"
+                height="150"
+                className="mx-3"
+                alt=""
+              />
+            </div>
+            <div className="d-flex align-items-center fw-bold">
+              <Link to={"/admin"} className="mx-3">
+                <h4>
+                  <i class="bi bi-arrow-return-left"></i>
+                  Back
+                </h4>
+              </Link>
+            </div>
+          </div>
+        </Row>
+      </Container>
+
+      <div className="createTourPage d-flex justify-content-center align-items-center mt-5">
+        <Formik
+          initialValues={initialValues}
+          onSubmit={onSubmit}
+          validationSchema={validationSchema}
+        >
+          <Form className="formContainer col-lg-6 border p-5">
+            <h1 className="title_content mt-3 pb-2"> Create Tours </h1>
+            <div className="form-group mt-5">
+              <label htmlFor="price">Tour Price: </label>
+              <ErrorMessage name="price" component="span" />
+              <Field
+                type="text"
+                id="price"
+                name="price"
+                placeholder="Tour Price"
+                className="form-control"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="numOfPeople">Number of People: </label>
+              <ErrorMessage name="numOfPeople" component="span" />
+              <Field
+                type="text"
+                id="numOfPeople"
+                name="numOfPeople"
+                placeholder="Number of People"
+                className="form-control"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="region">Region: </label>
+              <ErrorMessage name="region" component="span" />
+              <Field
+                type="text"
+                id="region"
+                name="region"
+                placeholder="Region"
+                className="form-control"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="place">Place: </label>
+              <ErrorMessage name="place" component="span" />
+              <Field
+                type="text"
+                id="place"
+                name="place"
+                placeholder="Place"
+                className="form-control"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="description">Description: </label>
+              <ErrorMessage name="description" component="span" />
+              <Field
+                as="textarea"
+                id="description"
+                name="description"
+                placeholder="Description"
+                className="form-control"
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="image">Upload Image: </label>
+              <input
+                type="file"
+                onChange={(e) => setFile(e.target.files[0])}
+                accept="image/*"
+                className="form-control-file"
+              />
+              <ErrorMessage name="image" component="span" />
+            </div>
+
+            <div className="text-center">
+              <button type="submit" className="btn btn-primary">
+                Create Tour
+              </button>
+            </div>
+          </Form>
+        </Formik>
+      </div>
+    </>
+  );
+}

@@ -23,7 +23,7 @@ export default function Tours() {
       updateFilteredTours(searchCriteria);
     } else {
       axios
-        .get("https://localhost:3001/api/tours")
+        .get("https://travelatease-5e3f78deebae.herokuapp.com//api/tours")
         .then((response) => {
           const toursData = response.data;
           setAllTours(toursData);

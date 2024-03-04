@@ -24,7 +24,9 @@ const Admin = () => {
   useEffect(() => {
     const fetchTours = async () => {
       try {
-        const response = await axios.get("https://localhost:3001/api/tours");
+        const response = await axios.get(
+          "https://travelatease-5e3f78deebae.herokuapp.com//api/tours"
+        );
         console.log("Response:", response);
 
         setTours(response.data);
@@ -47,7 +49,9 @@ const Admin = () => {
 
     try {
       // Send a request to delete the tour
-      await axios.delete(`https://localhost:3001/api/delete-tour/${id}`);
+      await axios.delete(
+        `https://travelatease-5e3f78deebae.herokuapp.com//api/delete-tour/${id}`
+      );
       console.log("Tour deleted successfully!");
 
       // Remove the deleted tour from the local state

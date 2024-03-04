@@ -26,7 +26,7 @@ const Reviews = ({ tourData, id, redirectToParent }) => {
         rating: tourRating,
       };
       const response = await axios.post(
-        `https://localhost:3001/api/postReview`,
+        `https://travelatease-5e3f78deebae.herokuapp.com//api/postReview`,
         reviewData
       );
 

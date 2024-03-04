@@ -27,7 +27,6 @@ const s3Client = new S3Client({
   },
 });
 
-
 // For random Image name to avoid duplicates
 const randomImageName = (bytes = 32) =>
   crypto.randomBytes(bytes).toString("hex");
